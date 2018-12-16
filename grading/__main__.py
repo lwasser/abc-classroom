@@ -39,7 +39,7 @@ def set_config(config):
 
 
 def init():
-    """Setup GitHub credentials for later"""
+    """Setup GitHub credentials for distributing lessons to students."""
 
     config = get_config()
 
@@ -228,7 +228,8 @@ def distribute():
             )
 
         if not message:
-            print("Empty commit message, exiting.")
+            print("Your commit message will be used to create a pull request in "
+                  "each student's repository. Please add a commit message.")
             sys.exit(1)
 
         for student in config['students']:
